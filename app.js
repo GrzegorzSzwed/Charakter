@@ -49,14 +49,21 @@ const StartButton = document.getElementById("start-btn");
 const StartPage = document.querySelector(".start");
 const QuestionsContainer = document.querySelector(".container");
 const AnswerButton = document.querySelector("button");
+const Body = document.querySelector("body");
+const statistics = document.querySelector(".stats");
 let question = 0;
+const maxHeight = 300;
 
 //listeners
 StartButton.addEventListener("click", function (event) {
   event.preventDefault();
+  localStorage.removeItem("answers");
   StartPage.style.display = "none";
+  statistics.style.display = "none";
   LoadQuestion();
 });
+
+Body.addEventListener("onload", LoadResult());
 
 function LoadQuestion() {
   //Create div
@@ -119,35 +126,46 @@ function saveLocalAnswers(answer) {
 }
 
 function LoadResult() {
-  //Create div
-  const questionDiv = document.createElement("div");
-  questionDiv.classList.add("question");
-  //Create list
-  const result = document.createElement("h1");
-  result.innerText = "Twój wynik to:";
+  if (localStorage.getItem("answers") != null) {
+    //Create div
+    const questionDiv = document.createElement("div");
+    questionDiv.classList.add("question");
+    //Create list
+    const result = document.createElement("h1");
+    result.innerText = "Twój wynik to:";
 
-  const answers = JSON.parse(localStorage.getItem("answers"));
-  const greenList = answers.filter((answer) => answer.color === "green");
-  console.log(greenList);
-  const blueList = answers.filter((answer) => answer.color === "blue");
-  console.log(blueList);
-  const redList = answers.filter((answer) => answer.color === "red");
-  const yellowList = answers.filter((answer) => answer.color === "yellow");
+    const answers = JSON.parse(localStorage.getItem("answers"));
+    const greenList = answers.filter((answer) => answer.color === "green");
+    console.log(greenList);
+    const blueList = answers.filter((answer) => answer.color === "blue");
+    console.log(blueList);
+    const redList = answers.filter((answer) => answer.color === "red");
+    const yellowList = answers.filter((answer) => answer.color === "yellow");
 
-  const green = document.createElement("h2");
-  green.innerText = `zielony: ${greenList.length}`;
-  const red = document.createElement("h2");
-  red.innerText = `czerwony: ${redList.length}`;
-  const blue = document.createElement("h2");
-  blue.innerText = `niebieski: ${blueList.length}`;
-  const yellow = document.createElement("h2");
-  yellow.innerText = `żółty: ${yellowList.length}`;
+    statistics.style.display = "flex";
 
-  questionDiv.appendChild(result);
-  questionDiv.appendChild(green);
-  questionDiv.appendChild(red);
-  questionDiv.appendChild(yellow);
-  questionDiv.appendChild(blue);
+    const greensquare = document.querySelector(".green");
+    greensquare.style.height = `${(greenList.length / 11) * maxHeight}px`;
+    if (greenList.length > 0) {
+      greensquare.innerText = greenList.length;
+    }
 
-  QuestionsContainer.appendChild(questionDiv);
+    const redsquare = document.querySelector(".red");
+    redsquare.style.height = `${(redList.length / 11) * maxHeight}px`;
+    if (redList.length > 0) {
+      redsquare.innerText = redList.length;
+    }
+
+    const bluesquare = document.querySelector(".blue");
+    bluesquare.style.height = `${(blueList.length / 11) * maxHeight}px`;
+    if (blueList.length > 0) {
+      bluesquare.innerText = blueList.length;
+    }
+
+    const yellowsquare = document.querySelector(".yellow");
+    yellowsquare.style.height = `${(yellowList.length / 11) * maxHeight}px`;
+    if (yellowList.length > 0) {
+      yellowsquare.innerText = yellowList.length;
+    }
+  }
 }
