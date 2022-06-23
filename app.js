@@ -1,47 +1,92 @@
 const character = [
-  { name: "żywiołowy", color: "yellow" },
-  { name: "zrelaksowany", color: "green" },
-  { name: "zdeterminowany", color: "red" },
-  { name: "zapobiegliwy", color: "blue" },
-  { name: "wymagający", color: "red" },
-  { name: "wyciszony", color: "green" },
-  { name: "wspierający", color: "green" },
-  { name: "władczy", color: "red" },
-  { name: "uprzejmy", color: "green" },
-  { name: "troskliwy", color: "green" },
-  { name: "spontaniczny", color: "yellow" },
-  { name: "spokojny", color: "green" },
-  { name: "towarzyski", color: "yellow" },
-  { name: "skrupulatny", color: "blue" },
-  { name: "rywalizujący", color: "red" },
-  { name: "ruchliwy", color: "yellow" },
-  { name: "rozważny", color: "blue" },
-  { name: "radosny", color: "yellow" },
-  { name: "przekonujący", color: "yellow" },
-  { name: "precyzyjny", color: "blue" },
-  { name: "porywczy", color: "red" },
-  { name: "pomocny", color: "green" },
-  { name: "pewny siebie", color: "red" },
-  { name: "otwarty", color: "yellow" },
-  { name: "ostrożny", color: "blue" },
-  { name: "opiekuńczy", color: "green" },
-  { name: "operatywny", color: "red" },
-  { name: "oficjalny", color: "blue" },
-  { name: "obiektywny", color: "blue" },
-  { name: "o silnej woli", color: "red" },
-  { name: "niezłomny", color: "red" },
-  { name: "nastawiony na cel", color: "red" },
-  { name: "entuzjastyczny", color: "yellow" },
-  { name: "empatyczny", color: "green" },
-  { name: "ekspresyjny", color: "yellow" },
-  { name: "ekspansywny", color: "yellow" },
-  { name: "dynamiczny", color: "yellow" },
-  { name: "dosadny", color: "red" },
-  { name: "dokładny", color: "blue" },
+  { name: "ambitny", color: "red" },
+  { name: "analityczny", color: "blue" },
+  { name: "analizujący ryzyka", color: "blue" },
+  { name: "bezpośredni", color: "yellow" },
+  { name: "bezstronny", color: "blue" },
+  { name: "celowy", color: "red" },
+  { name: "ceniący dane", color: "blue" },
+  { name: "ceniący indywidualną pracę", color: "blue" },
+  { name: "ceniący wiedzę", color: "blue" },
+  { name: "ciepły", color: "green" },
+  { name: "czarujący", color: "yellow" },
+  { name: "decyzyjny", color: "red" },
+  { name: "delegujący", color: "red" },
+  { name: "doceniający innych", color: "green" },
   { name: "dociekliwy", color: "blue" },
-  { name: "cierpliwy", color: "green" },
-  { name: "analizujący", color: "blue" },
-  { name: "nienarzucający się", color: "green" },
+  { name: "dostosowujący się", color: "green" },
+  { name: "dusza towarzystwa", color: "yellow" },
+  { name: "dynamiczny", color: "red" },
+  { name: "dyplomatyczny", color: "red" },
+  { name: "efektywny", color: "red" },
+  { name: "empatyczny", color: "green" },
+  { name: "energetyczny", color: "yellow" },
+  { name: "entuzjastyczny", color: "yellow" },
+  { name: "formalny", color: "blue" },
+  { name: "hojny", color: "green" },
+  { name: "innowacyjny", color: "yellow" },
+  { name: "inspirujący", color: "yellow" },
+  { name: "instynktowny", color: "yellow" },
+  { name: "intuicyjny", color: "yellow" },
+  { name: "kreatywny", color: "yellow" },
+  { name: "łagodzący konflikty", color: "green" },
+  { name: "logiczny", color: "blue" },
+  { name: "lojalny", color: "green" },
+  { name: "lubiący małe kroki", color: "green" },
+  { name: "lubiący spokój", color: "green" },
+  { name: "lubiący sprawdzone rozwiązania", color: "green" },
+  { name: "lubiący wyzwania", color: "red" },
+  { name: "metodyczny", color: "blue" },
+  { name: "nadający ton", color: "red" },
+  { name: "nastawiony na atmosferę", color: "yellow" },
+  { name: "nastawiony na bezpieczeństwo", color: "green" },
+  { name: "nastawiony na dokładność", color: "blue" },
+  { name: "nastawiony na działanie", color: "red" },
+  { name: "nastawiony na innych ludzi", color: "green" },
+  { name: "nastawiony na nowe", color: "yellow" },
+  { name: "nastawiony na wygraną", color: "red" },
+  { name: "nieschematyczny", color: "yellow" },
+  { name: "opanowany", color: "blue" },
+  { name: "optymistyczny", color: "yellow" },
+  { name: "oryginalny", color: "yellow" },
+  { name: "ostrożny", color: "blue" },
+  { name: "oszczędny", color: "blue" },
+  { name: "pedantyczny", color: "blue" },
+  { name: "pewny siebie", color: "red" },
+  { name: "pionierski", color: "red" },
+  { name: "podchodzący z dystansem", color: "blue" },
+  { name: "pomocny", color: "green" },
+  { name: "poukładany", color: "blue" },
+  { name: "praktyczny", color: "red" },
+  { name: "przestrzegający zasad", color: "blue" },
+  { name: "przewodzący", color: "red" },
+  { name: "przyspieszający", color: "red" },
+  { name: "rozsądny", color: "blue" },
+  { name: "rozważający za i przeciw", color: "blue" },
+  { name: "rozwiązyjący problemy", color: "blue" },
+  { name: "rywalizujący", color: "red" },
+  { name: "rzetelny", color: "green" },
+  { name: "skoncentrowany na celu", color: "red" },
+  { name: "spontaniczny", color: "yellow" },
+  { name: "szybki", color: "red" },
+  { name: "towarzystki", color: "yellow" },
+  { name: "twardy", color: "red" },
+  { name: "uczuciowy", color: "green" },
+  { name: "umiejący załatwiać", color: "yellow" },
+  { name: "wesoły", color: "yellow" },
+  { name: "wielowątkowy", color: "yellow" },
+  { name: "wizjonerski", color: "red" },
+  { name: "wprowadzający harmonię", color: "green" },
+  { name: "wprowadzający reguły", color: "blue" },
+  { name: "wspierający", color: "green" },
+  { name: "współpracujący", color: "green" },
+  { name: "wykonujący", color: "green" },
+  { name: "wystawny", color: "yellow" },
+  { name: "zachwycony sobą", color: "yellow" },
+  { name: "zaplanowany", color: "green" },
+  { name: "zdeterminowny", color: "red" },
+  { name: "zorganizowany", color: "green" },
+  { name: "życzliwy", color: "green" },
 ];
 
 //consts
@@ -51,6 +96,7 @@ const QuestionsContainer = document.querySelector(".container");
 const AnswerButton = document.querySelector("button");
 const Body = document.querySelector("body");
 const statistics = document.querySelector(".stats");
+const quentionQty = 22;
 let question = 0;
 const maxHeight = 300;
 
@@ -63,7 +109,11 @@ StartButton.addEventListener("click", function (event) {
   LoadQuestion();
 });
 
-Body.addEventListener("onload", LoadResult());
+Body.addEventListener("onload", OnOpenPage());
+
+function OnOpenPage() {
+  LoadResult();
+}
 
 function LoadQuestion() {
   //Create div
@@ -145,25 +195,31 @@ function LoadResult() {
     statistics.style.display = "flex";
 
     const greensquare = document.querySelector(".green");
-    greensquare.style.height = `${(greenList.length / 11) * maxHeight}px`;
+    greensquare.style.height = `${
+      (greenList.length / quentionQty) * maxHeight
+    }px`;
     if (greenList.length > 0) {
       greensquare.innerText = greenList.length;
     }
 
     const redsquare = document.querySelector(".red");
-    redsquare.style.height = `${(redList.length / 11) * maxHeight}px`;
+    redsquare.style.height = `${(redList.length / quentionQty) * maxHeight}px`;
     if (redList.length > 0) {
       redsquare.innerText = redList.length;
     }
 
     const bluesquare = document.querySelector(".blue");
-    bluesquare.style.height = `${(blueList.length / 11) * maxHeight}px`;
+    bluesquare.style.height = `${
+      (blueList.length / quentionQty) * maxHeight
+    }px`;
     if (blueList.length > 0) {
       bluesquare.innerText = blueList.length;
     }
 
     const yellowsquare = document.querySelector(".yellow");
-    yellowsquare.style.height = `${(yellowList.length / 11) * maxHeight}px`;
+    yellowsquare.style.height = `${
+      (yellowList.length / quentionQty) * maxHeight
+    }px`;
     if (yellowList.length > 0) {
       yellowsquare.innerText = yellowList.length;
     }
